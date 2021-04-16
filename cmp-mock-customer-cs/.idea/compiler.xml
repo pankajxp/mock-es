@@ -10,7 +10,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="cmp-mock-customer" target="11" />
+      <module name="cmp-mock-customer" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
