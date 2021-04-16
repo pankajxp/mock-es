@@ -8,6 +8,7 @@ import org.apache.http.impl.client.HttpClientBuilder;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.http.*;
@@ -33,6 +34,9 @@ public class RetailCustomerResource {
     @Autowired
     RestTemplate restTemplate;
 
+    @Value("${es.url}")
+    String url;
+
     @GetMapping("/customer/{id}")
     private ResponseEntity<RetailCustomer> getCustomer(@PathVariable("id") Long customerID) {
 
@@ -40,7 +44,7 @@ public class RetailCustomerResource {
 
         //restTemplate.
 
-        String url = "http://localhost:8080/api/customer/1";
+        //String url = "http://localhost:8080/api/customer/1";
         HttpHeaders headers = new HttpHeaders();
         headers.setAccept(Arrays.asList(MediaType.APPLICATION_JSON));
         headers.setContentType(MediaType.APPLICATION_JSON);
