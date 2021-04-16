@@ -1,9 +1,18 @@
-package com.example.es.model;
+package com.example.cs.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.Getter;
+import lombok.Setter;
 
-public class RetailCustomerDTO {
+import javax.validation.Valid;
+import javax.validation.constraints.NotNull;
 
+@Getter
+@Setter
+public class RetailCustomerResponseDTO {
+
+    @Valid
+    @NotNull
     @JsonProperty("esCustomerID")
     private Long esCustomerID;
 

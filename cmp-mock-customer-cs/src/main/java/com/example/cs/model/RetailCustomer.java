@@ -16,17 +16,17 @@ public class RetailCustomer {
     @Column
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @ApiModelProperty(value = "Unique ID for the customer")
-    @JsonProperty("esCustomerID")
+    @JsonProperty("csCustomerID")
     private Long csCustomerID;
 
     @Column
     @ApiModelProperty(value = "The customers name")
-    @JsonProperty("esName")
+    @JsonProperty("csName")
     private String csName;
 
     @Column
     @ApiModelProperty(value = "Identifics whether the customer is a senior citizen or not")
-    @JsonProperty("esIsSenior")
+    @JsonProperty("csIsSenior")
     private Boolean csIsSenior;
 
     public RetailCustomer(Long csCustomerID, String csName, Boolean csIsSenior) {
