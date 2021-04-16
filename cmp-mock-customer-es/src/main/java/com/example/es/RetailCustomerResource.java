@@ -12,7 +12,7 @@ import org.springframework.web.client.RestTemplate;
 
 
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/es")
 public class RetailCustomerResource {
 
     private Logger log = LogManager.getLogger(RetailCustomerResource.class);

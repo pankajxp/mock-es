@@ -23,7 +23,7 @@ import java.time.Duration;
 import java.util.Arrays;
 
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/cs")
 public class RetailCustomerResource {
 
     private Logger log = LogManager.getLogger(RetailCustomerResource.class);
@@ -40,17 +40,13 @@ public class RetailCustomerResource {
     @GetMapping("/customer/{id}")
     private ResponseEntity<RetailCustomer> getCustomer(@PathVariable("id") Long customerID) {
 
-        //RestTemplate restTemplate = new RestTemplate();
 
-        //restTemplate.
-
-        //String url = "http://localhost:8080/api/customer/1";
         HttpHeaders headers = new HttpHeaders();
         headers.setAccept(Arrays.asList(MediaType.APPLICATION_JSON));
         headers.setContentType(MediaType.APPLICATION_JSON);
         HttpEntity<?> entity = new HttpEntity<>(headers);
 
-        return restTemplate.exchange(url, HttpMethod.GET, entity, RetailCustomer.class);
+        return restTemplate.exchange(url + "/" + customerID, HttpMethod.GET, entity, RetailCustomer.class);
 
         //return retailService.getCustomersById(customerID);
     }
@@ -58,7 +54,13 @@ public class RetailCustomerResource {
     @PostMapping("/customer")
     private ResponseEntity<RetailCustomer> persistResponse(
             @Validated @RequestBody final RetailCustomer retailCustomer) {
-       return retailService.create(retailCustomer);
+
+        HttpEntity<RetailCustomer> entity = new HttpEntity<>(new RetailCustomer(retailCustomer));
+
+        //return restTemplate.exchange(url, HttpMethod.POST, entity, RetailCustomer.class);
+
+        return restTemplate.postForEntity(url, entity, RetailCustomer.class);
+       //return retailService.create(retailCustomer);
     }
 
     public void setRestTemplate(RestTemplate restTemplate) {
