@@ -12,10 +12,10 @@ import java.util.Arrays;
 import java.util.List;
 
 @SpringBootApplication
-public class CmpApplication {
+public class RetailCustomerApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(CmpApplication.class, args);
+		SpringApplication.run(RetailCustomerApplication.class, args);
 	}
 
 	@Bean

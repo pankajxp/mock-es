@@ -1,6 +1,6 @@
 package com.example.es;
 
-import com.example.es.dao.CMPRetailRepository;
+import com.example.es.dao.RetailCustomerRepository;
 import com.example.es.model.RetailCustomer;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -19,14 +19,14 @@ public class RetailCustomerApplication {
 	}
 
 	@Bean
-	CommandLineRunner init(CMPRetailRepository cmpRetailRepository){
+	CommandLineRunner init(RetailCustomerRepository retailCustomerRepository){
 		return args -> {
 			List<RetailCustomer> customers = new ArrayList<>(Arrays.asList(
             new RetailCustomer(1L, "Humaira", false),
             new RetailCustomer(2L, "Pankaj", false),
             new RetailCustomer(3L, "John", true)
     		));
-			customers.forEach(customer -> cmpRetailRepository.save(new RetailCustomer(customer)));
+			customers.forEach(customer -> retailCustomerRepository.save(new RetailCustomer(customer)));
 		};
 	}
 

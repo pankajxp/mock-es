@@ -1,7 +1,7 @@
 package com.example.es;
 
 import com.example.es.model.RetailCustomer;
-import com.example.es.service.CMPRetailServiceImpl;
+import com.example.es.service.RetailCustomerServiceImpl;
 import org.apache.logging.log4j.Logger;
 import org.apache.logging.log4j.LogManager;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,7 +18,7 @@ public class RetailCustomerResource {
     private Logger log = LogManager.getLogger(RetailCustomerResource.class);
 
     @Autowired
-    public CMPRetailServiceImpl cmpRetailService;
+    public RetailCustomerServiceImpl cmpRetailService;
 
     @Autowired
     RestTemplate restTemplate;

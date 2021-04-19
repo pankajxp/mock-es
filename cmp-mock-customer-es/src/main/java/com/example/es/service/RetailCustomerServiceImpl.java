@@ -1,7 +1,7 @@
 package com.example.es.service;
 
 import com.example.es.model.RetailCustomer;
-import com.example.es.dao.CMPRetailRepository;
+import com.example.es.dao.RetailCustomerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.*;
 import org.springframework.stereotype.Service;
@@ -10,14 +10,14 @@ import org.springframework.validation.annotation.Validated;
 import org.springframework.web.client.RestTemplate;
 
 @Service
-public class CMPRetailServiceImpl implements CMPRetailService{
+public class RetailCustomerServiceImpl implements RetailCustomerService {
 
     @Autowired
-    public CMPRetailRepository cmpRetailRepository;
+    public RetailCustomerRepository retailCustomerRepository;
 
     @Transactional
     public Iterable<RetailCustomer> getAllCustomers(){
-        return cmpRetailRepository.findAll();
+        return retailCustomerRepository.findAll();
     }
 
 
@@ -26,8 +26,8 @@ public class CMPRetailServiceImpl implements CMPRetailService{
 
     @Transactional
     public ResponseEntity getCustomersById(Long customerID) {
-        if(cmpRetailRepository.findById(customerID).isPresent()){
-            return ResponseEntity.status(HttpStatus.OK).body(cmpRetailRepository.findById(customerID).get());
+        if(retailCustomerRepository.findById(customerID).isPresent()){
+            return ResponseEntity.status(HttpStatus.OK).body(retailCustomerRepository.findById(customerID).get());
         }
         else{
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Customer Not Found");
@@ -36,9 +36,9 @@ public class CMPRetailServiceImpl implements CMPRetailService{
 
     public ResponseEntity create(@Validated RetailCustomer retailCustomer){
 
-        cmpRetailRepository.save(retailCustomer);
-        if(cmpRetailRepository.findById(retailCustomer.getEsCustomerID()).isPresent()){
-            return ResponseEntity.status(HttpStatus.CREATED).body(cmpRetailRepository.findById(retailCustomer.getEsCustomerID()).get());
+        retailCustomerRepository.save(retailCustomer);
+        if(retailCustomerRepository.findById(retailCustomer.getEsCustomerID()).isPresent()){
+            return ResponseEntity.status(HttpStatus.CREATED).body(retailCustomerRepository.findById(retailCustomer.getEsCustomerID()).get());
 
         }
         else{

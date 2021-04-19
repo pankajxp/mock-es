@@ -3,7 +3,7 @@ package com.example.es.service;
 import com.example.es.model.RetailCustomer;
 import org.springframework.http.ResponseEntity;
 
-public interface CMPRetailService{
+public interface RetailCustomerService {
 
     ResponseEntity<RetailCustomer> create(RetailCustomer retailCustomer);
 
