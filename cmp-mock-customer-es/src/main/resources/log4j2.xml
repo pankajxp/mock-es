@@ -16,7 +16,7 @@
     </Appenders>
     <Loggers>
 
-        <Logger name="com.example.cmp" additivity="false">
+        <Logger name="com.example.es" additivity="false">
             <AppenderRef ref="Console" />
             <AppenderRef ref="logFile"/>
         </Logger>
