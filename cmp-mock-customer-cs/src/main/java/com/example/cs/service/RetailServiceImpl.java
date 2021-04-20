@@ -8,8 +8,6 @@ import com.example.cs.model.RetailCustomerMapper;
 import com.example.cs.model.RetailCustomerResponseDTO;
 import org.apache.http.client.config.RequestConfig;
 import org.apache.http.impl.client.HttpClientBuilder;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.web.client.RestTemplateBuilder;
@@ -28,7 +26,7 @@ import java.util.Arrays;
 @Service
 public class RetailServiceImpl implements RetailService {
 
-    private Logger log = LogManager.getLogger(RetailCustomerResource.class);
+    //private Logger log = LogManager.getLogger(RetailCustomerResource.class);
 
     @Autowired
     public RetailRepository retailRepository;
@@ -51,7 +49,7 @@ public class RetailServiceImpl implements RetailService {
             headers.setContentType(MediaType.APPLICATION_JSON);
             HttpEntity<?> entity = new HttpEntity<>(headers);
 
-            log.info("Get Customer with ID {}", customerID);
+           // log.info("Get Customer with ID {}", customerID);
 
             ResponseEntity<RetailCustomerDTO> response = restTemplate.exchange(url + "/" + customerID, HttpMethod.GET, entity, RetailCustomerDTO.class);
 
@@ -75,7 +73,7 @@ public class RetailServiceImpl implements RetailService {
 
         HttpEntity<RetailCustomerResponseDTO> entity = new HttpEntity<>(esCustomer);
         HttpEntity<RetailCustomerResponseDTO> customer = restTemplate.postForEntity(url, entity, RetailCustomerResponseDTO.class);
-        log.info("Creating New Customer with ID {}", customer.getBody().getEsCustomerID());
+        //log.info("Creating New Customer with ID {}", customer.getBody().getEsCustomerID());
         return getCustomersById(customer.getBody().getEsCustomerID());
     }
 
