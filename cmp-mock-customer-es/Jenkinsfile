@@ -10,7 +10,7 @@ pipeline {
         }
         stage('Unit Test') {
             steps {
-                sh 'mvn test'
+                sh 'mvn test -Dtest=RetailCustomerApplicationTest'
             }
             post {
                 always {
@@ -18,9 +18,9 @@ pipeline {
                 }
             }
         }
-        stage('Run') {
+        stage('Integration Test') {
             steps {
-                sh 'mvn spring-boot:run'
+                sh 'mvn test -Dtest=KarateTest'
             }
         }
     }
