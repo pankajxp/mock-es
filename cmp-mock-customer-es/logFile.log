@@ -160,3 +160,53 @@
 2021-04-20 16:56:15 [INFO  ] RetailCustomerResource – Posted new customer with id null 
 2021-04-20 16:56:58 [INFO  ] RetailCustomerResource – Get customerID 1 
 2021-04-20 16:56:58 [INFO  ] RetailCustomerResource – Posted new customer with id null 
+2021-04-21 12:52:20 [INFO  ] RetailCustomerApplication – Starting RetailCustomerApplication using Java 1.8.0_282 on WKMZT8FE2C3F.global.publicisgroupe.net with PID 76899 (/Users/humahmed1/Documents/cmp-mock-gcp/cmp-mock-customer-es/target/classes started by humahmed1 in /Users/humahmed1/Documents/cmp-mock-gcp/cmp-mock-customer-es)
+2021-04-21 12:52:20 [INFO  ] RetailCustomerApplication – No active profile set, falling back to default profiles: default
+2021-04-21 12:52:24 [INFO  ] RetailCustomerApplication – Started RetailCustomerApplication in 4.544 seconds (JVM running for 6.029)
+2021-04-21 12:52:46 [INFO  ] RetailCustomerResource – Get customerID 1 
+2021-04-21 12:52:46 [INFO  ] RetailCustomerResource – Posted new customer with id 4 
+2021-04-21 12:52:46 [INFO  ] RetailCustomerResource – Get customerID 4 
+2021-04-21 12:55:57 [INFO  ] RetailCustomerResource – Get customerID 1 
+2021-04-21 12:55:58 [INFO  ] RetailCustomerResource – Posted new customer with id 5 
+2021-04-21 12:55:58 [INFO  ] RetailCustomerResource – Get customerID 5 
+2021-04-21 12:56:56 [INFO  ] RetailCustomerResource – Get customerID 1 
+2021-04-21 12:56:56 [INFO  ] RetailCustomerResource – Posted new customer with id 6 
+2021-04-21 12:56:56 [INFO  ] RetailCustomerResource – Get customerID 6 
+2021-04-21 12:57:15 [INFO  ] RetailCustomerResource – Get customerID 1 
+2021-04-21 12:57:15 [INFO  ] RetailCustomerResource – Posted new customer with id 7 
+2021-04-21 12:57:15 [INFO  ] RetailCustomerResource – Get customerID 7 
+2021-04-21 12:58:06 [INFO  ] RetailCustomerResource – Get customerID 1 
+2021-04-21 12:58:06 [INFO  ] RetailCustomerResource – Posted new customer with id 8 
+2021-04-21 12:58:06 [INFO  ] RetailCustomerResource – Get customerID 8 
+2021-04-21 12:58:34 [INFO  ] RetailCustomerResource – Get customerID 1 
+2021-04-21 12:58:34 [INFO  ] RetailCustomerResource – Posted new customer with id 4 
+2021-04-21 12:58:34 [INFO  ] RetailCustomerResource – Get customerID 4 
+2021-04-21 13:04:17 [INFO  ] RetailCustomerResource – Get customerID 1 
+2021-04-21 13:04:17 [INFO  ] RetailCustomerResource – Get customerID 2 
+2021-04-21 13:04:17 [INFO  ] RetailCustomerResource – Get customerID 3 
+2021-04-21 13:04:17 [INFO  ] RetailCustomerResource – Posted new customer with id 4 
+2021-04-21 13:04:17 [INFO  ] RetailCustomerResource – Get customerID 4 
+2021-04-21 13:06:18 [INFO  ] RetailCustomerResource – Get customerID 1 
+2021-04-21 13:07:58 [INFO  ] RetailCustomerResource – Get customerID 1 
+2021-04-21 13:07:58 [INFO  ] RetailCustomerResource – Get customerID 2 
+2021-04-21 13:07:58 [INFO  ] RetailCustomerResource – Get customerID 3 
+2021-04-21 13:07:59 [INFO  ] RetailCustomerResource – Posted new customer with id 4 
+2021-04-21 13:07:59 [INFO  ] RetailCustomerResource – Get customerID 4 
+2021-04-21 13:09:31 [INFO  ] RetailCustomerResource – Get customerID 1 
+2021-04-21 13:09:32 [INFO  ] RetailCustomerResource – Get customerID 2 
+2021-04-21 13:09:32 [INFO  ] RetailCustomerResource – Get customerID 3 
+2021-04-21 13:09:32 [INFO  ] RetailCustomerResource – Posted new customer with id null 
+2021-04-21 13:09:32 [INFO  ] RetailCustomerResource – Get customerID 10 
+2021-04-21 13:10:05 [INFO  ] RetailCustomerResource – Get customerID 1 
+2021-04-21 13:10:05 [INFO  ] RetailCustomerResource – Get customerID 2 
+2021-04-21 13:10:05 [INFO  ] RetailCustomerResource – Get customerID 3 
+2021-04-21 13:10:05 [INFO  ] RetailCustomerResource – Posted new customer with id null 
+2021-04-21 13:10:05 [INFO  ] RetailCustomerResource – Get customerID 10 
+2021-04-21 13:10:12 [INFO  ] RetailCustomerApplication – Starting RetailCustomerApplication using Java 1.8.0_282 on WKMZT8FE2C3F.global.publicisgroupe.net with PID 80743 (/Users/humahmed1/Documents/cmp-mock-gcp/cmp-mock-customer-es/target/classes started by humahmed1 in /Users/humahmed1/Documents/cmp-mock-gcp/cmp-mock-customer-es)
+2021-04-21 13:10:12 [INFO  ] RetailCustomerApplication – No active profile set, falling back to default profiles: default
+2021-04-21 13:10:16 [INFO  ] RetailCustomerApplication – Started RetailCustomerApplication in 3.881 seconds (JVM running for 4.705)
+2021-04-21 13:10:20 [INFO  ] RetailCustomerResource – Get customerID 1 
+2021-04-21 13:10:20 [INFO  ] RetailCustomerResource – Get customerID 2 
+2021-04-21 13:10:20 [INFO  ] RetailCustomerResource – Get customerID 3 
+2021-04-21 13:10:20 [INFO  ] RetailCustomerResource – Posted new customer with id null 
+2021-04-21 13:10:20 [INFO  ] RetailCustomerResource – Get customerID 10 
