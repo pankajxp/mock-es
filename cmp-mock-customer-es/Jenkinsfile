@@ -10,7 +10,7 @@ pipeline {
         }
         stage('Unit Test') {
             steps {
-                sh 'mvn test -Dtest=RetailCustomerApplicationTest'
+                sh 'mvn -Dtest=RetailCustomerApplicationTest test'
             }
             post {
                 always {
@@ -20,7 +20,7 @@ pipeline {
         }
         stage('Integration Test') {
             steps {
-                sh 'mvn test -Dtest=KarateTest'
+                sh 'mvn -Dtest=KarateTest test'
             }
         }
     }

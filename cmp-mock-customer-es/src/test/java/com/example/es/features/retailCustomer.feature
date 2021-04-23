@@ -1,7 +1,7 @@
 Feature: Retail Customer API (ES)
 
   Background:
-    * url 'http://localhost:8070/es/customer'
+    * url esUrl
 
   Scenario Outline: Retrieve customers
 
