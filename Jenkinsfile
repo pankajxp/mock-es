@@ -15,7 +15,7 @@ pipeline {
             }
             post {
                 always {
-                    junit 'target/surefire-reports/*.xml'
+                    junit './cmp-mock-customer-es/target/surefire-reports/*.xml'
                 }
             }
         }
