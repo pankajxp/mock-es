@@ -36,8 +36,8 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-                sh 'kubectl create -f deployment.yaml'
-                sh 'kubectl create -f service.yaml'
+                sh 'kubectl apply -f deployment.yaml'
+                sh 'kubectl apply -f service.yaml'
             }
         }
         stage('Integration Test') {

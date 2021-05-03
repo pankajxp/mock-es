@@ -2,18 +2,20 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: es-deployment
+  labels:
+    app: mock-es
 spec:
   selector:
     matchLabels:
-      app: es-server
+      app: mock-es
   replicas: 1
   template:
     metadata:
       labels:
-        app: es-server
+        app: mock-es
     spec:
       containers:
-      - name: es-container
+      - name: mock-es
         image: gcr.io/burner-panagnih/mock-es:v1
         ports:
           - containerPort: 8500

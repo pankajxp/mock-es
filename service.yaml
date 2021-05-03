@@ -1,13 +1,13 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: es-service
+  name: mock-es-service
   labels:
-    run: es-service
+    run: mock-es
 spec:
   ports:
     - port: 8500
       targetPort: 8500
   selector:
-    app: es-server
+    app: mock-es
   type: LoadBalancer
