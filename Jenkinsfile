@@ -3,8 +3,12 @@ pipeline {
     tools {
         maven 'maven_3_8_1'
     }
+    environment {
+        JSON_KEY_FILE = '/Users/panagnih/Documents/Sapient/GCP/burner-panagnih-service-account-key.json'
+        PATH = '/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/Users/panagnih/tools/google-cloud-sdk/bin'
+    }
     stages {
-        stage('Build') {
+        stage('Build and Package') {
             steps {
                 sh 'mvn -B -DskipTests clean package -f cmp-mock-customer-es/pom.xml'
             }
@@ -19,9 +23,27 @@ pipeline {
                 }
             }
         }
+        stage('Docker Build and Push') {
+            steps {
+                sh 'docker build --label poc-mock-es  -t gcr.io/burner-panagnih/mock-es:v1 cmp-mock-customer-es/'
+            }
+            post {
+                always {
+                    sh 'gcloud auth configure-docker'
+                    sh 'docker push gcr.io/burner-panagnih/mock-es:v1'
+                }
+            }
+        }
+        stage('Deploy') {
+            steps {
+                sh 'kubectl create -f deployment.yaml'
+                sh 'kubectl create -f service.yaml'
+            }
+        }
         stage('Integration Test') {
             steps {
-                sh 'mvn -Dtest=KarateTest -DfailIfNoTests=false test -f cmp-mock-customer-es/pom.xml'
+                echo 'todo'
+//                 sh 'mvn -Dtest=KarateTest -DfailIfNoTests=false test -f cmp-mock-customer-es/pom.xml'
             }
         }
     }
