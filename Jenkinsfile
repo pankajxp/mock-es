@@ -15,34 +15,43 @@ pipeline {
         }
         stage('Unit Test') {
             steps {
-                sh 'mvn -Dtest=RetailCustomerApplicationTest test -f cmp-mock-customer-es/pom.xml'
+                echo 'TODO: Unit Test'
+//                 sh 'mvn -Dtest=RetailCustomerApplicationTest test -f cmp-mock-customer-es/pom.xml'
             }
             post {
                 always {
-                    junit 'cmp-mock-customer-es/target/surefire-reports/*.xml'
+                    echo 'TODO: post unit test'
+//                     junit 'cmp-mock-customer-es/target/surefire-reports/*.xml'
                 }
             }
         }
         stage('Docker Build and Push') {
             steps {
-                sh 'docker build --label poc-mock-es  -t gcr.io/burner-panagnih/mock-es:v1 cmp-mock-customer-es/'
+                sh 'docker build -t gcr.io/burner-panagnih/mock-es:v1 cmp-mock-customer-es/'
+                sh 'gcloud auth configure-docker'
+                sh 'docker push gcr.io/burner-panagnih/mock-es:v1'
             }
-            post {
-                always {
-                    sh 'gcloud auth configure-docker'
-                    sh 'docker push gcr.io/burner-panagnih/mock-es:v1'
-                }
-            }
+//             post {
+//                 always {
+//                     sh 'gcloud auth configure-docker'
+//                     sh 'docker push gcr.io/burner-panagnih/mock-es:v1'
+//                 }
+//             }
         }
         stage('Deploy') {
             steps {
-                sh 'kubectl apply -f deployment.yaml'
-                sh 'kubectl apply -f service.yaml'
+                script{
+                   try{
+                      sh 'kubectl apply -f .'
+                   }catch(error){
+                       sh 'kubectl create -f .'
+                   }
+                }
             }
         }
         stage('Integration Test') {
             steps {
-                echo 'todo'
+                echo 'TODO: Integration Test'
 //                 sh 'mvn -Dtest=KarateTest -DfailIfNoTests=false test -f cmp-mock-customer-es/pom.xml'
             }
         }
