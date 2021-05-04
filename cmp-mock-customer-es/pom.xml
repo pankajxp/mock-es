@@ -12,8 +12,10 @@
     <artifactId>cmp</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>cmp</name>
+    <packaging>jar</packaging>
     <description>CMP project for GCP</description>
     <properties>
+        <start-class>com.example.es.RetailCustomerApplication</start-class>
         <java.version>1.8</java.version>
     </properties>
     <dependencies>
@@ -228,6 +230,11 @@
             <!--					<argLine>-Dfile.encoding=UTF-8</argLine>-->
             <!--				</configuration>-->
             <!--			</plugin>-->
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
