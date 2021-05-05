@@ -73,7 +73,7 @@ public class RetailCustomerApplicationTest {
 
         mockMvc.perform(request)
                 .andExpect(status().isCreated())
-                .andExpect(content().json("{esCustomerID: 4, esName: Ryan, esIsSenior: true}"))
+                .andExpect(content().json("{esCustomerID: null, esName: Ryan, esIsSenior: true}"))
                 .andDo(print())
                 .andReturn();
     }

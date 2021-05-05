@@ -42,9 +42,13 @@ pipeline {
             steps {
                 script{
                    try{
-                      sh 'kubectl apply -f .'
+                       sh 'gcloud container clusters get-credentials cluster-1'
+                       sh 'kubectl create deployment es-deployment --image=gcr.io/burner-panagnih/mock-es:v1'
+                       sh 'kubectl expose deployment es-deployment --type LoadBalancer --port 8070'
+//                        sh 'kubectl apply -f .'
                    }catch(error){
-                       sh 'kubectl create -f .'
+//                         sh 'kubectl create deployment es-deployment --image=gcr.io/burner-panagnih/mock-es:v1'
+//                        sh 'kubectl create -f .'
                    }
                 }
             }
